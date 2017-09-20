@@ -1,7 +1,7 @@
 import ActionTypes from '../constants/actionTypes';
 import database from './database';
 
-export const getInvitation = () =>
+export const getInvite = () =>
     dispatch => {
         dispatch(getInviteRequestedAction());
         database.ref('/').once('value', snap => {

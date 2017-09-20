@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import Invite from '../components/Invite.js';
-import { getInvitation } from '../actions/getInvitation';
-import { addToInvite } from '../actions/addToInvite';
+import { getInvite } from '../actions/getInvite';
 import { watchGuestAddedEvent, watchGuestRemovedEvent } from '../actions/watchGuestEvents';
 import { removeGuest } from '../actions/removeGuest';
-
 
 const mapStateToProps = (state) => ({ invite: state.invite });
 
@@ -12,8 +10,7 @@ const mapDispatchToProps = (dispatch) => {
     watchGuestRemovedEvent(dispatch);
     watchGuestAddedEvent(dispatch);
     return {
-        onGetInvite: () => dispatch(getInvitation()),
-        onAddToInvite: (guestName) => dispatch(addToInvite(guestName)),
+        onGetInvite: () => dispatch(getInvite()),
         onRemoveGuest: (guestName) => dispatch(removeGuest(guestName))
     };
 };
